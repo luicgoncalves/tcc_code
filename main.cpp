@@ -298,7 +298,7 @@ void mainStateOperation() {
         displayMessage("Posicione o dedo","no leitor biometrico");
         if (autenticacao(idFp)) {
             logMessage("INFO", ("Acesso liberado para: " + nome).c_str());
-            displayMessage("Bem-vindo,", nome.c_str(), "Acesso liberado!");
+            displayMessage("Bem-vindo(a),", nome.c_str(), "Acesso liberado!");
             digitalWrite(FECHADURA, HIGH);
             delay(3000);
             digitalWrite(FECHADURA, LOW);
@@ -685,7 +685,7 @@ void carregarUnsignedCache() {
 void enrollFingerprintsFromUnsignedCache() {
     if (unsignedCache.empty()) {
         logMessage("WARNING", "Nenhum dado no cache de IDs não cadastrados.");
-        displayMessage("Aproxime um cartao", "Nenhum dado no cache");
+        displayMessage("Aproxime a Tag RFID", "Nenhum dado no cache");
         return;
     }
 
